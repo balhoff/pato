@@ -1,6 +1,6 @@
 language: java
 jdk:
-  - openjdk7
+  - oraclejdk8
 
 before_script:
   - mkdir -p bin
@@ -24,5 +24,4 @@ branches:
 
 notifications:
   email:
-    - cjmungall@lbl.gov
-
+    - jbalhoff@rti.org
