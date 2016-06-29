@@ -10,6 +10,10 @@ before_script:
   - wget http://build.berkeleybop.org/userContent/owltools/owltools-runner-all.jar -O bin/owltools-runner-all.jar
   - wget http://build.berkeleybop.org/userContent/owltools/owltools-oort-all.jar -O bin/owltools-oort-all.jar
   - chmod +x bin/*
+  - wget https://github.com/balhoff/shacl-runner/releases/download/v0.1/shacl-runner-0.1.tgz -O shacl-runner-0.1.tgz
+  - tar -zxf shacl-runner-0.1.tgz
+  - export PATH=$PATH:$PWD/shacl-runner-0.1/bin
+  - wget https://raw.githubusercontent.com/balhoff/shacl-runner/master/shapes.ttl -O shapes.ttl
 
 # command to run tests
 script: cd src/ontology && make test

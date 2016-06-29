@@ -99,3 +99,7 @@ reports/pato-%.csv: pato.owl sparql/%.sparql
 
 value_no_ldef.tsv: pato-edit.obo
 	blip-findall  -i $< "entity_partition(X,value_slim),\+genus(X,_)" -select X -label > $@
+
+run_shacl_checks: pato.owl
+	export JAVA_OPTS="-Xmx8G"; shacl-runner pato.owl ../../shapes.ttl
+	
